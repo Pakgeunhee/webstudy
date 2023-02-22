@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 1. <input type="text"> 태그 -->
+    <p>
+        <!-- 디폴트로 type="text" 적용 -->
+        <input> 
+        <br>
+        <!-- size 속성 : 입력상자 크기는 5 -->
+        <input type="text" size="5">
+        <br>
+        <!-- maxlength 속성 : 입력 가능한 최대 글자수는 4글자 -->
+        <input type="text" maxlength="4">
+        <br>
+        <!-- placeholder 속성 : 입력 메시지 -->
+        <input type="text" placeholder="검색어를 입력하세요">
+        <br>
+        <!-- required 속성 : 필수 입력 -->
+        <input type="text" required>
+        <br>
+        <!-- value 속성 : 입력한 값이 저장되는 속성 -->
+        <input type="text" value="날씨">
+        <br>
+        <!-- readonly 속성 : 입력된 값을 수정할 수 없게 만드는 속성 -->
+        <input type="text" value="영희야 사랑해" readonly>
+        <br>
+        <!-- disabled 속성 : 입력 상자를 사용할 수 없도록 만드는 속성 -->
+        <input type="text" disabled>
+    </p>
+
+    <!-- 2. 기타 <input> 태그 -->
+    <p>
+        <!-- type="password" : 비밀번호 입력용 -->
+        <input type="password" placeholder="비밀번호">
+        <br>
+        <!-- type="number" : 숫자 입력용 -->
+        <input type="number" min="1" max="12">
+        <br>
+        <!-- type="email" : 이메일 입력용 -->
+        <input type="email" placeholder="이메일">
+    </p>
+
+    <!-- 3. <textarea> 태그 -->
+    <p>
+        <!-- 디폴트 : 2행 20열 -->
+        <textarea></textarea>   
+        <br>
+        <!-- rows 속성 : 행, cols 속성 : 열 -->
+        <textarea rows="3" cols="30"></textarea>
+        <br>
+        <!-- value 속성 대신 태그 내부 텍스트가 입력된 값을 저장한다. -->
+        <textarea>안녕하세요</textarea>
+    </p>
+
+    <!-- 4. 단일 선택 : <input type="radio"> -->
+    <p>
+        <!-- name 속성 : 같은 name을 가지는 radio가 하나의 변수처럼 동작한다. -->
+        <input type="radio" name="gender">남
+        <input type="radio" name="gender">여
+        <br>
+        <!-- value 속성 : 어떤 radio를 선택했는지 알기 위해서 반드시 추가해야 한다. -->
+        <input type="radio" name="gender" value="male">남
+        <input type="radio" name="gender" value="female">여
+    </p>
+
+    <!-- 5. 다중 선택 : <input type="checkbox"> -->
+    <p>
+        <!-- 단독 사용이 가능하다. -->
+        <input type="checkbox"> 모두 동의합니다
+        <br>
+        <!-- name 속성 : 같은 이름을 가진 checkbox들은 하나의 배열처럼 동작한다. -->
+        <input type="checkbox" name="hobbies">운동
+        <input type="checkbox" name="hobbies">여행
+        <br>
+        <!-- value 속성 : 어떤 checkbox를 선택했는지 알기 위해서는 반드시 추가해야 한다. -->
+        <input type="checkbox" name="hobbies" value="1">운동
+        <input type="checkbox" name="hobbies" value="2">여행
+        <input type="checkbox" name="hobbies" value="4">독서
+        <input type="checkbox" name="hobbies" value="8">영화
+    </p>
+
+    <!-- 6. 목록 선택 : <select> 태그 -->
+        <p>
+            <!-- 하나의 option을 선택할 수 있다. -->
+            <select>
+                <option>naver.com</option>
+                <option>kakao.com</option>
+                <option>gmail.com</option>
+            </select>
+            <!-- multiple 속성 : 여러 개의 option을 선택할 수 있다. -->
+            <select multiple>
+                <option>서울</option>
+                <option>경기</option>
+                <option>인천</option>
+            </select>
+            <!-- name 속성 : <select> 태그에 작성한다. -->
+            <!-- value 속성 : <option> 태그에 작성한다.  -->
+            <select name="direction">
+                <option value="">방향을 선택하세요</option>
+                <option value="east">동</option>
+                <option value="west">서</option>
+                <option value="south">남</option>
+                <option value="north">북</option>
+            </select>
+        </p>
+    <!-- 7. 입력과 목록 선택을 동시에 처리 : <input type="text"> 태그와 <datalist> 태그 -->
+    <p>
+        <input type="text" list="domain">
+        <datalist id="domain">
+            <option value="naver.com"/>
+            <option value="kakao.com"/>
+            <option value="gmail.com"/>
+        </datalist>
+    </p>
+
+    <!-- 8. 라벨 붙이기 : <label> 태그 -->
+    <p>
+        <!-- <label for="입력요소id속성값"> -->
+        <label for="male">
+            <input type="radio" name="gender" value ="male" id="male">남
+        </label>
+        <label for="female">
+            <input type="radio" name="gender" value="female" id="female">여
+        </label>
+    </p>
+
+    <!-- 
+        9. <form> 태그
+            1) <form> 태그 내부에 입력 태그들을 배치한다.
+            2) 서브밋(submit)은 <form> 태그 단위로 이루어진다.
+                (1) 서브밋 : <form> 태그에 속한 모든 입력 태그들에 입력된 값을 서버측으로 보내는 것을 말한다.
+                (2) 서버 경로를 action 속성에 작성하고, 보내는 방법을 method 속성에 작성한다.
+            3) 주요 속성
+                (1) action
+                    ① 입력된 값을 전송할 서버의 주소(경로)
+                    ② 서버 내부 경로(URL Mapping)를 주로 작성
+                (2) method
+                    ① GET 방식
+                        - 디폴트 (생략 가능)
+                        - 전송할 데이터가 주소(URL)에 파라미터로 노출
+                        - 빠른 처리, 보안 취약
+                    ② POST 방식
+                        - 전송할 데이터가 본문에 포함되어 노출되지 않음
+                        - 느린 처리, 보안 우수
+     -->
+     
+     <!-- 
+        10. 버튼 
+            1) <button type="submit">텍스트</button> : 서브밋, type="subit" 생략 가능
+            2) <input type="submit" value="텍스트">  : 서브밋
+            3) <input type="reset" value="텍스트">   : 입력 값을 초기화
+            4) <input type="button" value="텍스트">  : 아무 일도 안하는 버튼, 직접 할 일을 지정해 줘야 한다.
+    -->
+
+     <p>
+        <form action="01_overvies.html">
+            <label for="name">
+                이름 <input type="text" id="name">
+            </label>
+            <br>
+            <laberl for="age">
+                나이 <input type="number" id="age" min="0" max="100">
+            </laberl>
+            <br>
+            <input type="submit" value="전송">
+            <input type="reset" value="입력초기화">
+            <input type="button" value="일반버튼" onclick="alert('호호호')">
+        </form>
+     </p>
+
+     <!-- 11. 입력 요소의 그룹 : <fieldset> -->
+     <p>
+            <fieldset>
+                <legen>성별</legen>
+                <label for="male">
+                    <input type="radio" name="gender" value ="male" id="male">남
+                </label>
+                <label for="female">
+                    <input type="radio" name="gender" value="female" id="female">여
+                </label>
+            </fieldset>
+     </p>
+
+     <p>
+     <h1>연습문제-1</h1>
+     <form method="post">
+        <input type="text" name="id" placeholder="example@naver.com" >
+        <input type="password" name="pw" placeholder="비밀번호">
+        <button>로그인</button>
+     </form>
+     
+     <h1>연습문제-2</h1>
+     <form method="post">
+        <table>
+            <tbody>
+                <tr>
+                    <td><input type="text" name="id" placeholder="아이디"></td>
+                    <td rowspan="2"><button>로그인</button></td>
+                </tr>
+                <tr>
+                    <td><input type="password" name="pw" placeholder="비밀번호"></td>
+                </tr>
+            </tbody>
+        </table>
+     </form>
+
+     <h1>연습문제-3</h1>
+     <form method="post">
+        <table>
+            <thead>
+                <tr>
+                    <th clspan="2">개인 정보 작성</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><label for="name">이름</label></td>
+                    <td><input type="text" name="name" id="name"></td>
+                </tr>
+                <tr>
+                    <td><laber for="email">메일 주소</laber></td>
+                    <td><input type="text" name="email" id="email"></td>
+                </tr>
+                <tr>
+                    <td><label for="tel">연락처</label></td>
+                    <td><input type="text" name="tel" id="tel"></td>
+                </tr>
+                <tr>
+                    <td><label for="url">블로그/홈페이지</label></td>
+                    <td><input type="text" name="url" id="url"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="2">
+                        <button>제출하기</button>
+                        <input type="reset" value="다시작성">
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+     </form>
+     </p>
+     <h1>연습문제-4</h1>
+     <form method="post">
+        <p>
+            <a href="https://www.naver.com">
+                <img alt="네이버로고" src="../../images/logo_naver.png" width="150px">
+            </a>
+        </p>
+        <br>
+        <label for="user_id"><strong>아이디</strong></label>
+        <br>
+        <input type="text" name="id" id="user_id">@naver.com
+        <br><br>
+        <label for="user_pw"><strong>비밀번호</strong></label>
+        <br>
+        <input type="password" name="pw" id="user_pw">
+        <br><br>
+        <label for="user_pw2"><strong>비밀번호 재확인</strong></label>
+        <br>
+        <input type="password" id="user_pw2">  <!-- 서버로 보낼 필요가 없어서 name 속성이 없음 -->
+        <br><br>
+        <label for="user_name"><strong>이름</strong></label>
+        <br>
+        <input type="text" name="name" id="user_name">
+        <br><br>
+        <label for="yyyy"><strong>생년월일</strong></label>
+        <br>
+        <input type="text" name="year" id="yyyy" placeholder="년(4자)" maxlength="4" size="4">
+        <select name="month">
+            <option value="">월</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <input type="text" name="day" placeholder="일" maxlength="2" size="4">
+        <br><br>
+        <label for="user_gender"><strong>성별</strong></label>
+        <br>
+        <select name="gender" id="user_gender">
+            <option value="">성별</option>
+            <option value="male">남자</option>
+            <option value="female">여자</option>
+            <option value="none">선택 안함</option>
+        </select>
+        <br><br>
+        <label for="user_email"><strong>본인 확인 이메일</strong>(선택)</label>
+        <br>
+        <input type="text" name="email" id="user_email" placeholder="선택입력">
+        <br><br>
+        <label for="user_tel"><strong>휴대전화</strong></label>
+        <br>
+        <select name="country">
+            <option value="+233">가나 +233</option>
+            <option value="...">...</option>
+            <option value="+82" selected>대한민국 +82</option>
+            <option value="...">...</option>
+            <option value="+832">홍콩 +832</option>
+        </select>
+        <br>
+        <input type="text" name="tel" id="user_tel" placeholder="전화번호 입력" size="10">
+        <input type="button" value="인증번호 받기">
+        <br>
+        <input type="text" placeholder="인증번호 입력하세요" disabled>
+        <br><br>
+        <button>가입하기</button>
+    </form>
+
+</body>
+</html>
