@@ -137,6 +137,9 @@
         chkAll.onclick = function() {
             for(let i = 0; i < chkOneList.length; i++) {
                 chkOneList[i].checked = chkAll.checked;
+                    for(let j = 0; j < chkOneList.length; j++) { 
+                        chkOneList[j].checked
+                    }
             };
         };
 
@@ -144,9 +147,11 @@
         // 모두 체크되었으면 전체 동의를 체크하고, 아니면 전체 동의를 해제한다.
         for(let i = 0; i < chkOneList.length; i++) {
             chkOneList[i].onclick = function(){
+                let chkCount = 0;
                 for(let j = 0; j < chkOneList.length; j++) {
-                    
+                    chkCount += chkOneList[j].checked;
                 }
+                chkAll.checked = (chkOneList.length == chkCount);
             };
         };
         
