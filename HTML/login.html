@@ -1,42 +1,39 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>로그인</title>
-</head>
-<body>
+  </head>
+  <body>
     <div>
+      <div>
+        <img src="https://www.gdu.co.kr/images/main/logo.png" width="176px" />
+      </div>
+      <form action="board.html">
         <div>
-            <img src="https://www.gdu.co.kr/images/main/logo.png" width="176px">
+          <label for="id">
+            <input type="text" placeholder="아이디" id="id" />
+          </label>
         </div>
-        <form action="board.html">
-            <div>
-                <label for="id">
-                    <input type="text" placeholder="아이디" id="id">
-                </label>
-            </div>
-
-            <div>
-                <label for="pw">
-                    <input type="password" placeholder="비밀번호" id="id">
-                </label>
-            </div>
-
-            <div>
-                <button>로그인</button>       
-            </div>
-            
-            <div>
-                <label for="login">
-                    <input type="checkbox" id="login">자동 로그인
-                </label>
-                <label for="check_pw">
-                    <input type="checkbox" id="check_pw">비밀번호 저장
-                </label>
-            </div>
-        </form>
+        <div>
+          <label for="pw">
+            <input type="password" placeholder="비밀번호" id="id" />
+          </label>
+        </div>
+        <div>
+          <button>로그인</button>
+        </div>
+        <div>
+          <label for="login">
+            <input type="checkbox" id="login" />자동 로그인
+          </label>
+          <label for="check_pw">
+            <input type="checkbox" id="check_pw" />비밀번호 저장
+          </label>
+        </div>
+      </form>
     </div>
-</body>
+  </body>
 </html>

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        /*
+      /*
             BOM
             1. Browsr Object Model(브라우저 객체 모델)
             2. 브라우저의 구성 요소를 객체로 처리할 수 있는 방식이다.
@@ -22,34 +22,40 @@
     </script>
 
     <script>
-
-        // screen 객체
-        console.log('화면 너비', screen.width);
-        console.log('화면 높이', screen.height);
-        console.log('실제 너비', screen.availWidth);
-        console.log('실제 높이', screen.availHeight);
-
+      // screen 객체
+      console.log("화면 너비", screen.width);
+      console.log("화면 높이", screen.height);
+      console.log("실제 너비", screen.availWidth);
+      console.log("실제 높이", screen.availHeight);
     </script>
 
     <div>
-        <!-- history 객체 -->
-        <input type="button" onclick="history.back()" value="뒤로">
-        <input type="button" onclick="history.forward()" value="앞으로">
-        <input type="button" onclick="history.go(-1)" value="뒤로1번">
-        <input type="button" onclick="history.go(-2)" value="뒤로2번">
+      <!-- history 객체 -->
+      <input type="button" onclick="history.back()" value="뒤로" />
+      <input type="button" onclick="history.forward()" value="앞으로" />
+      <input type="button" onclick="history.go(-1)" value="뒤로1번" />
+      <input type="button" onclick="history.go(-2)" value="뒤로2번" />
     </div>
 
     <div>
-        <!-- location 객체 -->
-        <input type="button" onclick="location.href='https://www.naver.com'" value="네이버">
-        <input type="button" onclick="location.href='https://www.google.co.kr'" value="구글">
+      <!-- location 객체 -->
+      <input
+        type="button"
+        onclick="location.href='https://www.naver.com'"
+        value="네이버"
+      />
+      <input
+        type="button"
+        onclick="location.href='https://www.google.co.kr'"
+        value="구글"
+      />
     </div>
 
     <div>
-        <input type="button" id="btn_open" value="창열기">
+      <input type="button" id="btn_open" value="창열기" />
     </div>
     <script>
-        /*
+      /*
             window.open(url, target, feature)
             1. url       : 열어 줄 창(파일)의 경로
             2. target    : 창 이름(생략 가능)
@@ -57,15 +63,22 @@
                 1) width, height            : 열어 줄 창의 크기
                 2) top, bottom, left, right : 열어 줄 창의 위치
         */
-        document.getElementById('btn_open').addEventListener('click', () => {
-            var width = 530;
-            var height = 380;
-            var left = (screen.width - width) / 2;
-            var top = (screen.height - height) / 2;
-            var feature = 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top;
-            window.open('18_popup.html', '', feature);
-        });
+      document.getElementById("btn_open").addEventListener("click", () => {
+        var width = 530;
+        var height = 380;
+        var left = (screen.width - width) / 2;
+        var top = (screen.height - height) / 2;
+        var feature =
+          "width=" +
+          width +
+          ",height=" +
+          height +
+          ",left=" +
+          left +
+          ",top=" +
+          top;
+        window.open("18_popup.html", "", feature);
+      });
     </script>
-
-</body>
+  </body>
 </html>

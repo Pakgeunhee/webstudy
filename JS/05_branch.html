@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <div>
-        <div>국어점수 <span id="kor">81</span>점</div>
-        <div>영어점수 <span id="eng">93</span>점</div>
-        <div>수학점수 <span id="math">100</span>점</div>
+      <div>국어점수 <span id="kor">81</span>점</div>
+      <div>영어점수 <span id="eng">93</span>점</div>
+      <div>수학점수 <span id="math">100</span>점</div>
     </div>
     <div>
-        <div>평균점수 <span id="average"></span>점</div>
-        <div>학점 <span id="grade"></span>학점</div>
+      <div>평균점수 <span id="average"></span>점</div>
+      <div>학점 <span id="grade"></span>학점</div>
     </div>
     <script>
-        var kor = Number(document.getElementById('kor').textContent);
-        var eng = Number(document.getElementById('eng').textContent);
-        var math = Number(document.getElementById('math').textContent);
+      var kor = Number(document.getElementById("kor").textContent);
+      var eng = Number(document.getElementById("eng").textContent);
+      var math = Number(document.getElementById("math").textContent);
 
-        var average = (kor + eng + math) / 3;
+      var average = (kor + eng + math) / 3;
 
-        var grade;
-        /*
+      var grade;
+      /*
         if(average >= 90) {
             grade = 'A';
         } else if(average >= 80) {
@@ -41,19 +40,31 @@
         }
         */
 
-        // JavaScript의 switch문은 비교 연산자 사용이 가능하다.
-        switch(true) {  // 각 case를 보시오.
-            case average >= 90: grade = 'A'; break;
-            case average >= 80: grade = 'B'; break;
-            case average >= 70: grade = 'C'; break;
-            case average >= 60: grade = 'D'; break;
-            case average >= 50: grade = 'E'; break;
-            default: grade = 'F';
-        }
+      // JavaScript의 switch문은 비교 연산자 사용이 가능하다.
+      switch (
+        true // 각 case를 보시오.
+      ) {
+        case average >= 90:
+          grade = "A";
+          break;
+        case average >= 80:
+          grade = "B";
+          break;
+        case average >= 70:
+          grade = "C";
+          break;
+        case average >= 60:
+          grade = "D";
+          break;
+        case average >= 50:
+          grade = "E";
+          break;
+        default:
+          grade = "F";
+      }
 
-        document.getElementById('average').textContent = average;
-        document.getElementById('grade').textContent = grade;
+      document.getElementById("average").textContent = average;
+      document.getElementById("grade").textContent = grade;
     </script>
-
-</body>
+  </body>
 </html>

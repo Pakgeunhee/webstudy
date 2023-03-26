@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <script>
-
-        /*
+      /*
            1. setTimeout
                1) 한 번만 동작하는 타이머 함수이다.
                2) 동작
@@ -19,7 +17,7 @@
                    clearTimeout(id);
         */
 
-        /*
+      /*
         var timerId = setTimeout(function(){
            console.log('5초 지났다.');
         }, 5000);
@@ -29,8 +27,7 @@
     </script>
 
     <script>
-        
-        /*
+      /*
             2. setInterval
                 1) 반복해서 동작하는 타이머 함수이다.
                 2) 동작
@@ -39,7 +36,7 @@
                     clearInterval(id);
         */
 
-        /*
+      /*
         var n = 0;
         var timerId = setInterval(function(){
             console.log(n++);
@@ -47,13 +44,12 @@
         clearInterval(timerId);
         */
     </script>
-    
+
     <h1 id="timer1"></h1>
     <script>
+      // 5초 타이머 구현하기(5 → 4 → 3 → 2 → 1 → 땡)
 
-        // 5초 타이머 구현하기(5 → 4 → 3 → 2 → 1 → 땡)
-
-        /*
+      /*
         var countDown = 5;
         var timer1 = document.getElementById('timer1');
         var timerId = setInterval(function(){
@@ -68,8 +64,7 @@
     </script>
 
     <script>
-
-        /*
+      /*
             재귀 호출 예시 : factorial 구하기 (5! = 5*4*3*2*1)
             5! = 5 * 4!     fnFactorial(5) = 5 * fnFactorial(4)
             4! = 4 * 3!     fnFactorial(4) = 4 * fnFactorial(3)
@@ -80,38 +75,34 @@
                             fnFactorial(n) = n * fnFactorial(n - 1);            
         */
 
-        function fnFactorial(n) {
-            if(n == 1) {
-                return 1;
-            } else {
-                return n * fnFactorial(n - 1);
-            }
+      function fnFactorial(n) {
+        if (n == 1) {
+          return 1;
+        } else {
+          return n * fnFactorial(n - 1);
         }
-        console.log(fnFactorial(5));
-
+      }
+      console.log(fnFactorial(5));
     </script>
-    
+
     <h1 id="timer2"></h1>
     <script>
+      // 5초 타이머 구현하기(5 → 4 → 3 → 2 → 1 → 땡)
 
-        // 5초 타이머 구현하기(5 → 4 → 3 → 2 → 1 → 땡)
+      var timer2 = document.getElementById("timer2");
+      function fnTimer(countDown) {
+        setTimeout(function () {
+          if (countDown == 0) {
+            timer2.textContent = "땡";
+            return; // setTimeout에 전달된 익명 함수(콜백)를 종료한다.
+          } else {
+            timer2.textContent = countDown;
+            fnTimer(countDown - 1);
+          }
+        }, 1000);
+      }
 
-        var timer2 = document.getElementById('timer2');
-        function fnTimer(countDown) {
-            setTimeout(function(){
-                if(countDown == 0) {
-                    timer2.textContent = '땡';
-                    return;     // setTimeout에 전달된 익명 함수(콜백)를 종료한다.
-                } else {
-                    timer2.textContent = countDown;
-                    fnTimer(countDown - 1);
-                }
-            }, 1000);
-        }
-        
-        fnTimer(5);
-
+      fnTimer(5);
     </script>
-    
-</body>
+  </body>
 </html>
